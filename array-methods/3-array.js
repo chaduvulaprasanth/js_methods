@@ -56,6 +56,9 @@ var words2 = [
 ];
 
 // Write a function doesWordExist that will take in an array of words as one argument, and a word to search for as the other. Return true if it exists, otherwise, return false. Don't use indexOf for this one.
+function doesWordExist(array,word) {
+  return array.includes(word);
+}
 
 
 
@@ -76,6 +79,15 @@ var words3 = [
 
 
 // Write a function howManyTimes that will take in an array of words as one argument, and a word to search for as the other. The function will return the number of times that word appears in the array.
+function howManyTimes(array,word) {
+  var count = 0;
+    array.forEach((e) => {
+      if(e === word){
+        count++;
+      }
+    })
+  return count;
+}
 
 
 
