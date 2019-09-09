@@ -5,6 +5,18 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 // Use the above two arrays and practice array methods
 
 // Find largest number in numbers
+  // one way to find largest number 
+    var num = 0;
+    numbers.filter((e) =>{
+      if(num < e){
+      num = e;
+        }
+    })
+    console.log(num);
+  
+  // using array method to find the largest number
+    console.log(Math.max.apply(null, numbers))
+
 
 // Find longest string in strings
 
