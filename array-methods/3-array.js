@@ -14,7 +14,34 @@ var words = [
 
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
+var words = [
+  'crab',
+  'poison',
+  'contagious',
+  'simple',
+  'bring',
+  'sharp',
+  'playground',
+  'poison',
+  'communion',
+  'simple',
+  'bring'
+];
 
+// Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
+// (indexOf)
+
+function uniqueArray(array) {
+  var newarray = [];
+  words.forEach((word) => { 
+    if (!newarray.includes(word)){
+      newarray.push(word);
+    }
+  });
+  return newarray;
+}
+uniqueArray(words)
+  
 
 
 var words2 = [
