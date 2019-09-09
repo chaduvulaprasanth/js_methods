@@ -10,10 +10,13 @@
     <script src="./data.js"></script>
     <script>
       // Go through todo.md before start solving.
-      function countAllPeople() {
-        // your code goes here
+      function countAllPeople(got) {
         console.log(got);
+        let total = 0;
+        got.houses.forEach((e) => total +=e.people.length)
+        return total;
       }
+      countAllPeople(got)
 
       function peopleByHouses() {
         // your code goes here
