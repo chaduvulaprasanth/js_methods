@@ -9,7 +9,13 @@ var words = [
 ];
 //Write a function findLongestWord that takes an array of words and returns the longest one.
 //If there are 2 with the same length, it should return the first occurrence.
-
+  var longword = "";
+  words.forEach((e) => {
+    if(e.length > longword.length){
+        longword = e;
+    }
+  })
+  console.log(longword)
 
 
 
