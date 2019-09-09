@@ -5,7 +5,7 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 // Use the above two arrays and practice array methods
 
 // Find largest number in numbers
-  // one way to find largest number 
+  // one way to find largest number using filter
     var num = 0;
     numbers.filter((e) =>{
       if(num < e){
@@ -13,18 +13,78 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
         }
     })
     console.log(num);
-  
+
   // using array method to find the largest number
     console.log(Math.max.apply(null, numbers))
 
 
 // Find longest string in strings
+    // using filter method
+      var longestString = "";
+      strings.filter((e) => {
+        if(e.length > longestString.length){
+          longestString = e;
+        }
+      })
+      console.log(longestString)
+    
+    // using forEach method
+      var longestString = "";
+      strings.forEach((e) => {
+          if(e.length > longestString.length){
+            longestString = e;
+          }
+        })
+      console.log(longestString)
+
 
 // Find all the even numbers
+    // using filter method
+      numbers.filter((e) => {
+        if(e % 2 == 0){
+          return (e);
+        }
+      })
+     
+    // using forEach method 
+      numbers.forEach((e) => {
+        if(e % 2 == 0){
+          console.log(e);
+        }
+      })
+
 
 // Find all the odd numbers
 
+    // using filter method
+      numbers.filter((e) => {
+        if(e % 2 !== 0){
+          return (e);
+        }
+      })
+     
+    // using forEach method 
+      numbers.forEach((e) => {
+        if(e % 2 !== 0){
+          console.log(e);
+        }
+      })
+
 // Find all the words that contain 'is' use string method 'includes'
+    // using filter method
+      strings.filter((e) => {
+        if(e.includes("is")){
+        return (e);
+          }
+      })
+
+    // using forEach method
+      strings.forEach((e) => {
+        if(e.includes("is")){
+        console.log(e);
+          }
+      }) 
+    
 
 // Find all the words that contain 'is' use string method 'indexOf'
 
