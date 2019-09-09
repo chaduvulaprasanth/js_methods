@@ -30,7 +30,13 @@ var data = [
 // 1 human year = 7 dog year
 
 // your code goes here
-
+  function sumofAges() {
+    var sum = 0;
+    for (let i=0; i<data.length; i++) {
+      sum = sum + data[i].age*7;
+    }
+    return(sum);
+  }
 // Solution is 105
 
 // Write the same function using
