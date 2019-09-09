@@ -89,24 +89,53 @@ var strings = ["this", "is", "a", "collection", "of", "words"];
 // Find all the words that contain 'is' use string method 'indexOf'
 
 // Check if all the numbers in numbers array are divisible by three use array method (every)
+    numbers.every((e) => {
+      if(e%3 == 0){
+        return e;
+      }
+      
+    })
 
 //  Sort Array from smallest to largest
+    numbers.sort((a,b) => {
+      return a-b;
+    })
 
 // Remove the last word in strings
+    strings.pop()
 
 // Add a new word in the array
+    strings.push("newword")
 
 // Remove the first word in the array
+    strings.shift()
 
 // Place a new word at the start of the array use (upshift)
+    strings.unshift("firstword")
 
 // Make a subset of numbers array [18,9,7,11]
+    numbers.slice(3,7)
 
 // Make a subset of strings array ['a','collection']
+    strings.slice(2,4)
 
 // Replace 12 & 18 with 1221 and 1881
+  // using splice method
+    numbers.splice(1,1,1221);
+    numbers.splice(3,1,1881);
+
+  // using replace method
+    numbers.toString().replace(12,1221).split(" ")
+    numbers.toString().replace(18,1881).split(" ")
 
 // Replace words with string in strings array
+  // using splice method
+    strings.splice(5,1,"string")
+
+  // using replace method
+    strings.toString().replace("words", "string").split(" ")
+    
+
 
 // Customers Array
 var customers = [
@@ -116,7 +145,23 @@ var customers = [
   { firstname: "Jack", lastname: "White" }
 ];
 // Find all customers whose firstname starts with 'J'
-
+  var nameStartsWith;
+  for (let key in customers) {
+  nameStartsWith = (customers[key].firstname.charAt(0));
+  if(nameStartsWith == "J") {
+  console.log(customers[key]);
+  }
+  }
 // Create new array with firstname and lastname
+var arr = [
+  { firstname: "zara", lastname: "babu"},
+  { firstname: "anu", lastname: "kumar"},
+  { firstname: "sagar", lastname: "siddu"}
 
+]
 // Sort the array created above alphabetically
+arr.sort(function(a, b){
+  if(a.firstname < b.firstname) { return -1; }
+  if(a.firstname > b.firstname) { return 1; }
+  return 0;
+})
