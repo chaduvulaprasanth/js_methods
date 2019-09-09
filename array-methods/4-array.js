@@ -37,7 +37,7 @@ var data = [
     }
     return(sum);
   }
-// Solution is 105
+// Solution is 105 // -> 112
 
 // Write the same function using
 // 1. filter - for filtering the cat or dog

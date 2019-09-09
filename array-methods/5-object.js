@@ -1,4 +1,8 @@
 // 1. Write a JavaScript program to list the properties and values of a JavaScript object. (Object.keys)
+var obj = {
+  place: "thehr",
+  course: "javascript"
+}
 
 
 
