@@ -30,8 +30,14 @@ var data = [
 // 1 human year = 7 dog year
 
 // your code goes here
-
-// Solution is 105
+  function sumofAges() {
+    var sum = 0;
+    for (let i=0; i<data.length; i++) {
+      sum = sum + data[i].age*7;
+    }
+    return(sum);
+  }
+// Solution is 105 // -> 112
 
 // Write the same function using
 // 1. filter - for filtering the cat or dog
@@ -39,3 +45,5 @@ var data = [
 // 3. reduce - to accumulate total age.
 
 // Solution 105
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
+data.filter((e) => e.type == "dog").map((e) => {return e.age *7}).reduce(reducer)
