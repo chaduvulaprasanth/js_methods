@@ -15,17 +15,10 @@ var words = [
 // Write a function uniqueArray that receives an array of words as a parameter. And remove the duplicates, and return a new array. 
 // (indexOf)
 
-function uniqueArray(array) {
-  var newarray = [];
-  words.forEach((word) => { 
-    if (!newarray.includes(word)){
-      newarray.push(word);
-    }
-  });
-  return newarray;
-}
-uniqueArray(words)
-  
+function uniqueArray(words) {
+  var wordsFilter = words.filter((element, index) => words.indexOf(element) == index);
+  return wordsFilter;
+} 
 
 
 var words2 = [
@@ -97,10 +90,12 @@ let data = [
   }
 ]
 // solution
-  var population = data.reduce((acc, val) => {
-    return val.country == 'China' ? acc : acc + val.pop;
-  }, 0);
-  console.log(population)
+data.reduce((acc, value) => {
+	if (value.country == 'China') {
+		return acc;
+	} else {
+    return acc + value.pop;
+  }
 
 // Use reduce method and summorize the collection like
 // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
@@ -118,6 +113,15 @@ const fruitBasket = [
   'fig'
 ];
 
+// solution
+fruitBasket.reduce((acc, value) => {
+  if (acc[value]) {
+    acc[value]++;
+  } else {
+    acc[value] = 1;
+  }
+  return acc;
+}, {});
 
 
 // Bonus Question (Solve only if you have time)
