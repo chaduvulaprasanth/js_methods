@@ -12,7 +12,6 @@
       // Go through todo.md before start solving.
       
       function countAllPeople(got) {
-        console.log(got);
         let total = 0;
         got.houses.forEach((e) => total +=e.people.length)
         return total;
@@ -21,32 +20,88 @@
 
       function peopleByHouses() {
         // your code goes here
+        var result = [];
+        for (var i = 0; i < got.houses.length; i++) {
+	        result.push({house : got.houses[i].name, people : got.houses[i].people.length});
+        }
+        return result;
 
       }
 
       function everyone() {
-        // your code goes here
-        
+      // your code goes here
+        var peopleName = [];
+        for (var i = 0; i < got.houses.length; i++) {
+	        for (var j = 0; j < got.houses[i].people.length; j++) {
+            if (got.houses[i].people[j].name) {
+              peopleName.push(got.houses[i].people[j].name);
+            }
+	        }
+        }
+        return peopleName;
       }
 
       function nameWithS() {
         // your code goes here
+        var allPeople = everyone();
+        var peopleWithS = [];
+        for (let i = 0; i < allPeople.length; ++i) {
+          if (allPeople[i].includes('s') || allPeople[i].includes('S')) {
+            peopleWithS.push( allPeople[i] );
+          }
+        }
+        return peopleWithS;
       }
+      
 
       function nameWithA() {
         // your code goes here
+        var allPeople = everyone();
+        var peopleWithA = [];
+        for (let i = 0; i < allPeople.length; ++i) {
+          if (allPeople[i].includes('a') || allPeople[i].includes('A')) {
+            peopleWithA.push( allPeople[i] );
+          }
+        }
+        return peopleWithA;
       }
 
       function surnameWithS() {
         // your code goes here
+        var allPeople = everyone();
+        var Ssurname = [];
+        for (let i = 0; i < allPeople.length; ++i) {
+          if (allPeople[i].split(' ')[1][0] == 's' || allPeople[i].split(' ')[1][0] == 'S') {
+            Ssurname.push( allPeople[i] );
+          }
+        }
+        return Ssurname;
       }
 
       function surnameWithA() {
         // your code goes here
+        var allPeople = everyone();
+        var Asurname = [];
+        for (let i = 0; i < allPeople.length; ++i) {
+          if (allPeople[i].split(' ')[1][0] == 'A' || allPeople[i].split(' ')[1][0] == 'A') {
+            Asurname.push( allPeople[i] );
+          }
+        }
+        return Asurname;
       }
 
       function peopleNameOfAllHouses() {
         // your code goes here
+        var result = {};
+        var people = [];
+        for (let i = 0; i < got.houses.length; ++i) {
+          people = [];
+          for (let j = 0; j < got.houses[i].people.length; ++j) {
+            people.push(got.houses[i].people[j].name);
+          }
+          result[got.houses[i].name] = people;
+        }
+        return result;
       }
 
       // Testing your result after writing your function
