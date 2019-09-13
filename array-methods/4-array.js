@@ -45,3 +45,5 @@ var data = [
 // 3. reduce - to accumulate total age.
 
 // Solution 105
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
+data.filter((e) => e.type == "dog").map((e) => {return e.age *7}).reduce(reducer)
