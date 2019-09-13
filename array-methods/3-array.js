@@ -96,7 +96,11 @@ let data = [
     pop: 263991379,
   }
 ]
-
+// solution
+  var population = data.reduce((acc, val) => {
+    return val.country == 'China' ? acc : acc + val.pop;
+  }, 0);
+  console.log(population)
 
 // Use reduce method and summorize the collection like
 // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
